@@ -3,9 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.17.1",
     "react": "^16.1.1",
+    "react-bootstrap": "^0.31.5",
     "react-dom": "^16.1.1",
-    "react-scripts": "1.0.17"
+    "react-scripts": "1.0.17",
+    "zingchart": "^2.6.1",
+    "zingchart-react": "^1.0.6"
   },
   "scripts": {
     "start": "react-scripts start",
