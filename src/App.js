@@ -23,10 +23,7 @@ class App extends Component {
     axios.get(`https://min-api.cryptocompare.com/data/histoday?fsym=${currency}&tsym=USD&limit=30&aggregate=1`)
       .then(res => {
         console.log(res)
-        //refactoring data to match Zingchart required format
-        let graphData = res.data.Data.map((stockData) => {
-          return [stockData.time, [stockData.close, stockData.high, stockData.low, stockData.open]]
-        })
+        
 
         var myConfig2 = {
           type: "stock",
@@ -82,6 +79,7 @@ class App extends Component {
           backgroundColor: '#2C2C39'
         };
 
+        //refactoring data to match Zingchart required format
         let resData = res.data.Data.map(apidata => {
           return [apidata.time * 1000, [apidata.open, apidata.high, apidata.low, apidata.close]]
         })
@@ -125,11 +123,7 @@ class App extends Component {
     axios.get(`https://min-api.cryptocompare.com/data/histohour?fsym=${currency}&tsym=USD&limit=24&aggregate=1`)
       .then(res => {
         console.log(res)
-        //refactoring data to match Zingchart required format
-        let graphData = res.data.Data.map((stockData) => {
-          return [stockData.time, [stockData.close, stockData.high, stockData.low, stockData.open]]
-        })
-
+        
         var myConfig2 = {
           type: "stock",
           title: {
@@ -184,6 +178,7 @@ class App extends Component {
           backgroundColor: '#2C2C39'
         };
 
+        //refactoring data to match Zingchart required format
         let resData = res.data.Data.map(apidata => {
           return [apidata.time * 1000, [apidata.open, apidata.high, apidata.low, apidata.close]]
         })
